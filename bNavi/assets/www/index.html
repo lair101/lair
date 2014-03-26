@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+
+<html>
+    <head>  
+    
+    <link rel="stylesheet" href="js/jquery.mobile-1.3.2.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+   
+        
+     <script type="text/javascript" src="cordova.js"></script> 
+     <script src="http://maps.google.com/maps/api/js?sensor=false&language=en_us" type="text/javascript"></script>
+     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places,geometry&sensor=false"></script>   
+     <script  src="js/jquery-1.9.1.min.js"></script>
+	 <script src="js/jquery.mobile-1.3.2.min.js"></script>
+	 <script type="text/javascript" src="js/bluetoothSerial.js"></script>
+     <script type="text/javascript" src="js/index.js"></script>
+        
+     <title>Navigation</title>
+      
+	</head>
+
+    <body onload="app.initialize();">
+     <div class="app">
+     
+     	<!--main menu-->
+    	<div id="home" data-role="page">
+        	<!-- header-->
+        	<div data-role="header">
+            	<h1 style="font-size:24px; text-align:center;">Discover Lab</h1>
+                 	<button  id="mySettings" class="ui-btn-right">
+                    <img src="img/setting_48.png">
+                    </button>
+            </div>
+            <!--body-->
+            <div data-role="content">
+            		<div id="statusmessage"></div>
+                    <div class="grid" id="menuItems"></div>
+         	</div>
+       </div>
+        
+        
+        
+     	<!--navigation map-->
+    	<div id="navigation" data-role="page">
+        	<!-- header-->
+        	<div data-role="header">
+            	<h1 style="font-size:24px; text-align:center;">Discover Lab</h1>
+            </div>
+            <!--body-->
+            <div data-role="content">
+            	<div id="navi" style="float:left;">
+                	
+                </div>	
+                <div id="naviInfo" style="float:left;">
+                	<div data-role="fieldcontain">
+    					<label for="currentGPS">currentGPS:</label>
+   					 	<input type="text"  id="currentGPS" value=""  />
+					</div>	
+                    <div data-role="fieldcontain">
+    					<label for="nextPoint">Next point:</label>
+   					 	<input type="text"  id="nextPoint" value=""  />
+					</div>
+                    <div data-role="fieldcontain">
+    					<label for="cheading">current heading:</label>
+   					 	<input type="text"  id="cheading" value=""  />
+					</div>
+                    <div data-role="fieldcontain">
+    					<label for="prePoint">Previous point:</label>
+   					 	<input type="text"  id="prePoint" value=""  />
+					</div>
+                    <div data-role="fieldcontain">
+    					<label for="nheading">Next Heading:</label>
+   					 	<input type="text"  id="nheading" value=""  />
+					</div>
+                    <div data-role="fieldcontain">
+    					<label for="result">calculate result:</label>
+   					 	<input type="text"  id="result" value=""  />
+					</div>
+                </div>
+                
+         	</div>
+       </div>
+        
+        
+        
+        <!--setting page-->
+      	<div id="setting" data-role="page">
+        <!-- header-->
+        <div data-role="header"><h1 style="font-size:24px; text-align:center;">Setting</h1></div>
+        	<div data-role="content">
+            	<div id="addInfo">
+                <ul data-role="listview" data-inset="true" id="addressInfo"></ul>
+               </div>
+            </div>
+       </div>
+        
+        
+        <!--addEdit page-->
+      
+  		<div id="addEdit" data-role="page">
+        	<!-- header-->
+        	<div data-role="header">
+            	<h1 style="font-size:24px; text-align:center;">Setting</h1>
+            </div>
+            <!--body-->
+            <div data-role="content">
+            	<div><input type="text" id="searchText" placeholder="search box"/>
+                <ul id="placeSearch" data-role="listview" data-inset="true"></ul>
+                <button id="search" value="Search"/></div>
+            	<div id="addEdt" style="float:left;">
+                </div>	
+                <div style="float:left; width:100%;">
+                	<div data-role="fieldcontain">
+    					<label for="itemName">Name:</label>
+   					 	<input type="text"  id="itemName" value=""  />
+					</div>	
+                    <div data-role="fieldcontain">
+    					<label for="addDescription">addressInfo:</label>
+   					 	<textarea  id="addDescription" ></textarea>
+					</div>
+                    <div data-role="fieldcontain">
+    					<label for="addCorrdinate">address:</label>
+   					 	<input type="text"  id="addCorrdinate" value=""  />
+					</div>
+                </div>
+                <div class="grid" id="grid" style="float:left;">
+                        <div class="ui-grid-b"> 
+                        <div class="ui-block-a"><button id="cancelEdit" style="height:30px;" value="Cancel">Cancel</button></div>
+                        <div class="ui-block-b"><button id="saveEdit" style="height:30px;" value="Save" >Save</button></div>
+                        <div class="ui-block-b"><button id="deleteEdit" style="height:30px;" value="Delete" >Delete</button></div>
+                    	</div>
+                </div>
+                
+                
+            </div>
+       </div>
+        
+        <!--end-->
+     
+        
+        
+        </div>
+    </body>
+</html>
